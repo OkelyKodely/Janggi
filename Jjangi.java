@@ -5,51 +5,33 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Jjangi implements MouseListener {
+    
+    
     JFrame j = new JFrame();
     JPanel p = new JPanel();
     Graphics g = null;
     
-    Point canonGreen;
-    Point canonGreen2;
-    Point rookGreen;
-    Point rookGreen2;
-    Point longKnightGreen;
-    Point longKnightGreen2;
-    Point knightGreen;
-    Point knightGreen2;
-    Point guardGreen;
-    Point guardGreen2;
-    Point kingGreen;
-    Point pawnGreen;
-    Point pawnGreen2;
-    Point pawnGreen3;
-    Point pawnGreen4;
-    Point pawnGreen5;
+    
+    Point canonGreen, canonGreen2, rookGreen, rookGreen2, longKnightGreen,
+        longKnightGreen2, knightGreen, knightGreen2, guardGreen, guardGreen2,
+        kingGreen, pawnGreen, pawnGreen2, pawnGreen3, pawnGreen4, pawnGreen5;
 
-    Point canonRed;
-    Point canonRed2;
-    Point rookRed;
-    Point rookRed2;
-    Point longKnightRed;
-    Point longKnightRed2;
-    Point knightRed;
-    Point knightRed2;
-    Point guardRed;
-    Point guardRed2;
-    Point kingRed;
-    Point pawnRed;
-    Point pawnRed2;
-    Point pawnRed3;
-    Point pawnRed4;
-    Point pawnRed5;
+    Point canonRed, canonRed2, rookRed, rookRed2, longKnightRed,
+        longKnightRed2, knightRed, knightRed2, guardRed, guardRed2,
+        kingRed, pawnRed, pawnRed2, pawnRed3, pawnRed4, pawnRed5;
+
     
     int xx = -10, yy = -10;
+    
     int X = -10, Y = -10;
+    
     int press = 0;
     
     int selectedX = -10, selectedY = -10;
     
+    
     class Point {
+        
         int x, y;
         
         public Point(int x, int y) {
@@ -58,23 +40,15 @@ public class Jjangi implements MouseListener {
         }
     }
     
+    
     public Jjangi() {
         setGUI();
 
         initBoard();
-        
+
         Thread t = new Thread() {
             public void run() {
-                Graphics2D g2 = (Graphics2D) g;
-                while(true) {
-                    try {
-                        
-                        refresh();
-                        
-                
-                        Thread.sleep(1000);
-                    } catch(Exception e) {}
-                }
+                refresh();
             }
         };
         t.start();
@@ -776,16 +750,120 @@ public class Jjangi implements MouseListener {
             g.drawImage(imgFb, pawnRed5.x*90+50-20, pawnRed5.y*90+40-20, 40, 40, null);
         } catch(Exception e) {e.printStackTrace();}
 
-        g.setColor(Color.GREEN);
-        g.drawOval(selectedX*90+10, selectedY*90, 80, 80);
+        boolean isPieceSelected = false;
+        
+        if(rookGreen.x == selectedX && rookGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(rookGreen2.x == selectedX && rookGreen2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(longKnightGreen.x == selectedX && longKnightGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(longKnightGreen2.x == selectedX && longKnightGreen2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightGreen.x == selectedX && knightGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightGreen2.x == selectedX && knightGreen2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(guardGreen.x == selectedX && guardGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(guardGreen2.x == selectedX && guardGreen2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(canonGreen.x == selectedX && canonGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(canonGreen2.x == selectedX && canonGreen2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnGreen.x == selectedX && pawnGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnGreen2.x == selectedX && pawnGreen2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnGreen3.x == selectedX && pawnGreen3.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnGreen4.x == selectedX && pawnGreen4.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnGreen5.x == selectedX && pawnGreen5.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(rookRed.x == selectedX && rookRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(rookRed2.x == selectedX && rookRed2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(longKnightRed.x == selectedX && longKnightRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(longKnightRed2.x == selectedX && longKnightRed2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightRed.x == selectedX && knightRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(knightRed2.x == selectedX && knightRed2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(guardRed.x == selectedX && guardRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(guardRed2.x == selectedX && guardRed2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(canonRed.x == selectedX && canonRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(canonRed2.x == selectedX && canonRed2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnRed.x == selectedX && pawnRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnRed2.x == selectedX && pawnRed2.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnRed3.x == selectedX && pawnRed3.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnRed4.x == selectedX && pawnRed4.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(pawnRed5.x == selectedX && pawnRed5.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(kingRed.x == selectedX && kingRed.y == selectedY) {
+            isPieceSelected = true;
+        }
+        if(kingGreen.x == selectedX && kingGreen.y == selectedY) {
+            isPieceSelected = true;
+        }
+            
+        if(isPieceSelected) {
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setStroke(new BasicStroke(5));
+            g2.setColor(Color.GREEN);
+            g2.drawOval(selectedX*90+10, selectedY*90, 80, 80);
+        }
 
     }
     
     public void paintBoard() {
-        Graphics g2 = (Graphics) g;
+        Graphics2D g2 = (Graphics2D) g;
+        g2.setStroke(new BasicStroke(5));
         g2.setColor(new Color(200, 150, 55));
         g2.fillRect(0, 0, 950, 950);
-        g2.setColor(Color.BLACK);
+        g2.setColor(Color.red);
         for(int i=0; i<9; i++) {
             g2.drawLine(i*90+50, 40, i*90+50, 810+40);
         }
@@ -815,8 +893,9 @@ public class Jjangi implements MouseListener {
                 xx = X = selectedX = -10;
                 yy = Y = selectedY = -10;
                 
-                
                 press = 0;
+                
+                refresh();
                 
             }
         });
