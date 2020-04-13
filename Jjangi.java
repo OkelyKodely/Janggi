@@ -431,7 +431,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, rookGreen.x*90+50-20, rookGreen.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, rookGreen.x*90+50-20-10, rookGreen.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -442,7 +442,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, longKnightGreen.x*90+50-20, longKnightGreen.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, longKnightGreen.x*90+50-20-10, longKnightGreen.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -453,7 +453,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, knightGreen.x*90+50-20, knightGreen.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, knightGreen.x*90+50-20-10, knightGreen.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -486,7 +486,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, kingGreen.x*90+50-20, kingGreen.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, kingGreen.x*90+50-20-10-10, kingGreen.y*90+40-20-10-10, 80, 80, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -497,7 +497,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, longKnightGreen2.x*90+50-20, longKnightGreen2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, longKnightGreen2.x*90+50-20-10, longKnightGreen2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -508,7 +508,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, knightGreen2.x*90+50-20, knightGreen2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, knightGreen2.x*90+50-20-10, knightGreen2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -519,7 +519,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, rookGreen2.x*90+50-20, rookGreen2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, rookGreen2.x*90+50-20-10, rookGreen2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -530,7 +530,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, canonGreen.x*90+50-20, canonGreen.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, canonGreen.x*90+50-20-10, canonGreen.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -541,7 +541,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, canonGreen2.x*90+50-20, canonGreen2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, canonGreen2.x*90+50-20-10, canonGreen2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -608,7 +608,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, rookRed.x*90+50-20, rookRed.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, rookRed.x*90+50-20-10, rookRed.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -619,7 +619,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, longKnightRed.x*90+50-20, longKnightRed.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, longKnightRed.x*90+50-20-10, longKnightRed.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -630,7 +630,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, knightRed.x*90+50-20, knightRed.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, knightRed.x*90+50-20-10, knightRed.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -663,7 +663,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, kingRed.x*90+50-20, kingRed.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, kingRed.x*90+50-20-10-10, kingRed.y*90+40-20-10-10, 80, 80, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -674,7 +674,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, longKnightRed2.x*90+50-20, longKnightRed2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, longKnightRed2.x*90+50-20-10, longKnightRed2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -685,7 +685,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, knightRed2.x*90+50-20, knightRed2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, knightRed2.x*90+50-20-10, knightRed2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -696,7 +696,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, rookRed2.x*90+50-20, rookRed2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, rookRed2.x*90+50-20-10, rookRed2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -707,7 +707,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, canonRed.x*90+50-20, canonRed.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, canonRed.x*90+50-20-10, canonRed.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
@@ -718,7 +718,7 @@ public class Jjangi implements MouseListener {
             javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
             imgFb = iFb.getImage();
 
-            g.drawImage(imgFb, canonRed2.x*90+50-20, canonRed2.y*90+40-20, 40, 40, null);
+            g.drawImage(imgFb, canonRed2.x*90+50-20-10, canonRed2.y*90+40-20-10, 60, 60, null);
         } catch(Exception e) {e.printStackTrace();}
 
         try {
