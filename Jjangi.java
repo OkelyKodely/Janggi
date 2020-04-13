@@ -47,6 +47,8 @@ public class Jjangi implements MouseListener {
     int X = -10, Y = -10;
     int press = 0;
     
+    int selectedX = -10, selectedY = -10;
+    
     class Point {
         int x, y;
         
@@ -59,18 +61,18 @@ public class Jjangi implements MouseListener {
     public Jjangi() {
         setGUI();
 
-        paintBoard();
-
         initBoard();
         
         Thread t = new Thread() {
             public void run() {
+                Graphics2D g2 = (Graphics2D) g;
                 while(true) {
                     try {
                         
                         refresh();
+                        
                 
-                        Thread.sleep(100);
+                        Thread.sleep(1000);
                     } catch(Exception e) {}
                 }
             }
@@ -129,9 +131,16 @@ public class Jjangi implements MouseListener {
 
             X = (int)((double)e.getX()/(double)90);
             Y = (int)((double)e.getY()/(double)90);
+            
+            selectedX = X;
+            selectedY = Y;
+            
             press = 1;
             refresh();
         } else if(press == 1) {
+            
+            selectedX = -10;
+            selectedY = -10;
 
             xx = (int)((double)e.getX()/(double)90);
             yy = (int)((double)e.getY()/(double)90);
@@ -411,386 +420,382 @@ public class Jjangi implements MouseListener {
     }
     
     void refresh() {
-        Thread t = new Thread() {
-            public void run() {
-                paintBoard();
-                try {
-                    java.awt.Image imgFb = null;
+        
+        paintBoard();
 
-                    String imageFb = "rookGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "rookGreen.png";
 
-                    g.drawImage(imgFb, rookGreen.x*90+50-20, rookGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, rookGreen.x*90+50-20, rookGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "longKnightGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "longKnightGreen.png";
 
-                    g.drawImage(imgFb, longKnightGreen.x*90+50-20, longKnightGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, longKnightGreen.x*90+50-20, longKnightGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "knightGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "knightGreen.png";
 
-                    g.drawImage(imgFb, knightGreen.x*90+50-20, knightGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, knightGreen.x*90+50-20, knightGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "guardGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "guardGreen.png";
 
-                    g.drawImage(imgFb, guardGreen.x*90+50-20, guardGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, guardGreen.x*90+50-20, guardGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "guardGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "guardGreen.png";
 
-                    g.drawImage(imgFb, guardGreen2.x*90+50-20, guardGreen2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, guardGreen2.x*90+50-20, guardGreen2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "kingGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "kingGreen.png";
 
-                    g.drawImage(imgFb, kingGreen.x*90+50-20, kingGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, kingGreen.x*90+50-20, kingGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "longKnightGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "longKnightGreen.png";
 
-                    g.drawImage(imgFb, longKnightGreen2.x*90+50-20, longKnightGreen2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, longKnightGreen2.x*90+50-20, longKnightGreen2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "knightGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "knightGreen.png";
 
-                    g.drawImage(imgFb, knightGreen2.x*90+50-20, knightGreen2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, knightGreen2.x*90+50-20, knightGreen2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "rookGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "rookGreen.png";
 
-                    g.drawImage(imgFb, rookGreen2.x*90+50-20, rookGreen2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, rookGreen2.x*90+50-20, rookGreen2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "canonGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "canonGreen.png";
 
-                    g.drawImage(imgFb, canonGreen.x*90+50-20, canonGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, canonGreen.x*90+50-20, canonGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "canonGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "canonGreen.png";
 
-                    g.drawImage(imgFb, canonGreen2.x*90+50-20, canonGreen2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, canonGreen2.x*90+50-20, canonGreen2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnGreen.png";
 
-                    g.drawImage(imgFb, pawnGreen.x*90+50-20, pawnGreen.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnGreen.x*90+50-20, pawnGreen.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnGreen.png";
 
-                    g.drawImage(imgFb, pawnGreen2.x*90+50-20, pawnGreen2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnGreen2.x*90+50-20, pawnGreen2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnGreen.png";
 
-                    g.drawImage(imgFb, pawnGreen3.x*90+50-20, pawnGreen3.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnGreen3.x*90+50-20, pawnGreen3.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnGreen.png";
 
-                    g.drawImage(imgFb, pawnGreen4.x*90+50-20, pawnGreen4.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnGreen4.x*90+50-20, pawnGreen4.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnGreen.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnGreen.png";
 
-                    g.drawImage(imgFb, pawnGreen5.x*90+50-20, pawnGreen5.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
+            g.drawImage(imgFb, pawnGreen5.x*90+50-20, pawnGreen5.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                try {
-                    java.awt.Image imgFb = null;
 
-                    String imageFb = "rookRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "rookRed.png";
 
-                    g.drawImage(imgFb, rookRed.x*90+50-20, rookRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, rookRed.x*90+50-20, rookRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "longKnightRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "longKnightRed.png";
 
-                    g.drawImage(imgFb, longKnightRed.x*90+50-20, longKnightRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, longKnightRed.x*90+50-20, longKnightRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "knightRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "knightRed.png";
 
-                    g.drawImage(imgFb, knightRed.x*90+50-20, knightRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, knightRed.x*90+50-20, knightRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "guardRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "guardRed.png";
 
-                    g.drawImage(imgFb, guardRed.x*90+50-20, guardRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, guardRed.x*90+50-20, guardRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "guardRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "guardRed.png";
 
-                    g.drawImage(imgFb, guardRed2.x*90+50-20, guardRed2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, guardRed2.x*90+50-20, guardRed2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "kingRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "kingRed.png";
 
-                    g.drawImage(imgFb, kingRed.x*90+50-20, kingRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, kingRed.x*90+50-20, kingRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "longKnightRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "longKnightRed.png";
 
-                    g.drawImage(imgFb, longKnightRed2.x*90+50-20, longKnightRed2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, longKnightRed2.x*90+50-20, longKnightRed2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "knightRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "knightRed.png";
 
-                    g.drawImage(imgFb, knightRed2.x*90+50-20, knightRed2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, knightRed2.x*90+50-20, knightRed2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "rookRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "rookRed.png";
 
-                    g.drawImage(imgFb, rookRed2.x*90+50-20, rookRed2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, rookRed2.x*90+50-20, rookRed2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "canonRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "canonRed.png";
 
-                    g.drawImage(imgFb, canonRed.x*90+50-20, canonRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, canonRed.x*90+50-20, canonRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "canonRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "canonRed.png";
 
-                    g.drawImage(imgFb, canonRed2.x*90+50-20, canonRed2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, canonRed2.x*90+50-20, canonRed2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnRed.png";
 
-                    g.drawImage(imgFb, pawnRed.x*90+50-20, pawnRed.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnRed.x*90+50-20, pawnRed.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnRed.png";
 
-                    g.drawImage(imgFb, pawnRed2.x*90+50-20, pawnRed2.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnRed2.x*90+50-20, pawnRed2.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnRed.png";
 
-                    g.drawImage(imgFb, pawnRed3.x*90+50-20, pawnRed3.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnRed3.x*90+50-20, pawnRed3.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnRed.png";
 
-                    g.drawImage(imgFb, pawnRed4.x*90+50-20, pawnRed4.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
 
-                try {
-                    java.awt.Image imgFb = null;
+            g.drawImage(imgFb, pawnRed4.x*90+50-20, pawnRed4.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
 
-                    String imageFb = "pawnRed.png";
+        try {
+            java.awt.Image imgFb = null;
 
-                    javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
-                    imgFb = iFb.getImage();
+            String imageFb = "pawnRed.png";
 
-                    g.drawImage(imgFb, pawnRed5.x*90+50-20, pawnRed5.y*90+40-20, 40, 40, null);
-                } catch(Exception e) {e.printStackTrace();}
-            }
-        };
-        t.start();
+            javax.swing.ImageIcon iFb = new javax.swing.ImageIcon(this.getClass().getResource(imageFb));
+            imgFb = iFb.getImage();
+
+            g.drawImage(imgFb, pawnRed5.x*90+50-20, pawnRed5.y*90+40-20, 40, 40, null);
+        } catch(Exception e) {e.printStackTrace();}
+
+        g.setColor(Color.GREEN);
+        g.drawOval(selectedX*90+10, selectedY*90, 80, 80);
+
     }
     
     public void paintBoard() {
-        Thread t = new Thread() {
-            public void run() {
-                Graphics g2 = (Graphics) g;
-                g2.setColor(new Color(200, 150, 55));
-                g2.fillRect(0, 0, 950, 950);
-                g2.setColor(Color.BLACK);
-                for(int i=0; i<9; i++) {
-                    g2.drawLine(i*90+50, 40, i*90+50, 810+40);
-                }
-                for(int i=0; i<10; i++) {
-                    g2.drawLine(0+50, i*90+40, 720+50, i*90+40);
-                }
-                g2.drawLine(270+50, 0+40, 450+50, 180+40);
-                g2.drawLine(270+50, 180+40, 450+50, 0+40);
-                g2.drawLine(270+50, 630+40, 450+50, 810+40);
-                g2.drawLine(270+50, 810+40, 450+50, 630+40);
-            }
-        };
-        t.start();
+        Graphics g2 = (Graphics) g;
+        g2.setColor(new Color(200, 150, 55));
+        g2.fillRect(0, 0, 950, 950);
+        g2.setColor(Color.BLACK);
+        for(int i=0; i<9; i++) {
+            g2.drawLine(i*90+50, 40, i*90+50, 810+40);
+        }
+        for(int i=0; i<10; i++) {
+            g2.drawLine(0+50, i*90+40, 720+50, i*90+40);
+        }
+        g2.drawLine(270+50, 0+40, 450+50, 180+40);
+        g2.drawLine(270+50, 180+40, 450+50, 0+40);
+        g2.drawLine(270+50, 630+40, 450+50, 810+40);
+        g2.drawLine(270+50, 810+40, 450+50, 630+40);
     }
     
     void setGUI() {
@@ -801,12 +806,28 @@ public class Jjangi implements MouseListener {
         p.setBounds(0,0,880,900);
         JPanel pp = new JPanel();
         pp.setBounds(880,0,70,900);
+        JButton c = new JButton("DESELECT");
+        c.setBounds(900,10,160,35);
+        c.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                xx = X = selectedX = -10;
+                yy = Y = selectedY = -10;
+                
+                
+                press = 0;
+                
+            }
+        });
         JButton b = new JButton("New");
         b.setBounds(900,10,40,35);
         b.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+                xx = X = selectedX = -10;
+                yy = Y = selectedY = -10;
+                press = 0;
                 
                 initBoard();
 
@@ -815,6 +836,7 @@ public class Jjangi implements MouseListener {
             }
         });
         pp.add(b);
+        pp.add(c);
         j.add(p);
         j.add(pp);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
