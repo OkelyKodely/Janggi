@@ -2,6 +2,7 @@ package janggi;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 public class Janggi implements MouseListener {
@@ -9,7 +10,9 @@ public class Janggi implements MouseListener {
     
     JFrame j = new JFrame();
     JPanel p = new JPanel();
+    JPanel pp = new JPanel();
     Graphics g = null;
+    Graphics g2 = null;
     
     
     Point canonGreen, canonGreen2, rookGreen, rookGreen2, longKnightGreen,
@@ -856,6 +859,198 @@ public class Janggi implements MouseListener {
             g2.drawOval(selectedX*90+10, selectedY*90, 80, 80);
         }
 
+        g2.setColor(Color.LIGHT_GRAY);
+        g2.fillRect(0, 110, 200, 500);
+        
+        g2.setColor(Color.BLACK);
+        g2.drawString("G   R    ", 15, 140);
+
+        int iy = 0;
+
+        try {
+            if(pawnGreen.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnGreen2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnGreen3.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnGreen4.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnGreen5.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(rookGreen.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("rookGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(rookGreen2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("rookGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(knightGreen.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("knightGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(knightGreen2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("knightGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(longKnightGreen.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("longKnightGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(longKnightGreen2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("longKnightGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(guardGreen.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("guardGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(guardGreen2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("guardGreen.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+
+        int yy = 0;
+        try {
+            if(pawnRed.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnRed2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnRed3.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnRed4.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(pawnRed5.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("pawnRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(rookRed.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("rookRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(rookRed2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("rookRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(knightRed.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("knightRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(knightRed2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("knightRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(longKnightRed.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("longKnightRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(longKnightRed2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("longKnightRed.png"));
+                g2.drawImage(i, (int) 0+15, (int) yy*20+150, 10, 10, null);
+                yy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(guardRed.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("guardRed.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
+        try {
+            if(guardRed2.x == -1000) {
+                Image i = ImageIO.read(getClass().getResourceAsStream("guardRed.png"));
+                g2.drawImage(i, (int) 20+15, (int) iy*20+150, 10, 10, null);
+                iy++;
+            }
+        } catch(Exception e) {}
     }
     
     public void paintBoard() {
@@ -882,7 +1077,6 @@ public class Janggi implements MouseListener {
         j.setLayout(null);
         j.setBounds(0, 0, 950, 1050);
         p.setBounds(0,0,880,900);
-        JPanel pp = new JPanel();
         pp.setBounds(880,0,70,900);
         JButton c = new JButton("DESELECT");
         c.setBounds(900,10,160,35);
@@ -926,6 +1120,8 @@ public class Janggi implements MouseListener {
     
     void setGraphics() {
         g = p.getGraphics();
+        
+        g2 = pp.getGraphics();
     }
     
     public static void main(String[] args) {
