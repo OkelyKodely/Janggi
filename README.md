@@ -1,2 +1,2 @@
-# Jjangi
-Chinese Korean Chess in Java
+# Janggi
+Korean Chess in Java
